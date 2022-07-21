@@ -1,0 +1,25 @@
+database: employee 
+shubham password
+
+bucket: employeebuckethu
+
+EC2: WebServer Ubuntu
+sudo su -
+apt-get update
+apt-get install mysql-client
+
+Connect to RDS
+
+show databases;
+create database employee;
+use employee;
+create table employee(emp_id varchar(20), first_name varchar(20), last_name varchar(20), pri_skill varchar(20), location varchar(20));
+show tables;
+exit
+
+
+For executing program in local 
+pip install flask
+pip install pymysql
+pip install boto3
+pip freeze > requirements.txt
