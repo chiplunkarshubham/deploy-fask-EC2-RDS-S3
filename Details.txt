@@ -38,3 +38,8 @@ pip freeze > requirements.txt
 Create new repo in Git
 git remote add origin2 "https url"
 git push origin2 master
+
+
+In Dockerfile the below did not work
+
+RUN pip install -r requirements.txt
