@@ -3,12 +3,17 @@ shubham password
 
 bucket: employeebuckethu
 
-EC2: WebServer Ubuntu
+EC2: WebServer Ubuntu : Give Role to access s3 bucket
 sudo su -
 apt-get update
-apt-get install mysql-client
+apt-get install mysql-client -y
+apt-get install python3-flask -y
+apt-get install python3-pymysql -y
+apt-get install python3-boto3 -y
+python3 EmpApp.py
+nohup python3 EmpApp.py &
 
-Connect to RDS
+Connect to RDS:  mysql -h employee.ci8o9nwvx1hx.ap-south-1.rds.amazonaws.com -u shubham -p
 
 show databases;
 create database employee;
@@ -17,9 +22,19 @@ create table employee(emp_id varchar(20), first_name varchar(20), last_name varc
 show tables;
 exit
 
+Checking the db later
+mysql -h employee.ci8o9nwvx1hx.ap-south-1.rds.amazonaws.com -u shubham -p
+use employee;
+select * from employee;
 
 For executing program in local 
 pip install flask
 pip install pymysql
 pip install boto3
 pip freeze > requirements.txt
+
+
+
+Create new repo in Git
+git remote add origin2 "https url"
+git push origin2 master
